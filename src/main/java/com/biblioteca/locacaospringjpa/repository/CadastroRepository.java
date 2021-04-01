@@ -6,4 +6,6 @@ import com.biblioteca.locacaospringjpa.model.Cadastro;
 
 public interface CadastroRepository extends CrudRepository<Cadastro, Integer> {
 	
+	 Cadastro findByNome(String nome);
+	 
 }
