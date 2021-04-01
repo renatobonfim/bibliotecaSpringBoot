@@ -25,7 +25,7 @@ public class LocacaoItem {
 	private Integer id;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private Date dataPrevisaoEntrega;
 	
 	@Temporal(TemporalType.DATE)
@@ -42,11 +42,11 @@ public class LocacaoItem {
 	private Double valorLocacao;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_Locacao")
+	@JoinColumn(name = "id_locacao", nullable = false)
 	private Locacao locacao;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_livro")
+	@JoinColumn(name = "id_livro", nullable = false)
 	private Livro livro;
 
 	public Integer getId() {
