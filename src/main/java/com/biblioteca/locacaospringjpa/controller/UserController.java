@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.locacaospringjpa.model.Cadastro;
+import com.biblioteca.locacaospringjpa.model.Token;
 import com.biblioteca.locacaospringjpa.repository.CadastroRepository;
 
 import io.jsonwebtoken.Jwts;
@@ -22,33 +23,36 @@ public class UserController {
 
 	@Autowired
 	private CadastroRepository repository;
-
+	
 	@PostMapping("user")
-	public String login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
-
+	public Token login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
+		Token token = new Token();
 		Cadastro cadastro = new Cadastro();
 		cadastro = repository.findByNome(username);
 		String nome = cadastro.getLogin();
 		String senha = cadastro.getSenha();
 		if (senha.equals(pwd)  && nome.equals(username)) {
-			String token = getJWTToken(username);	
+			token = getJWTToken(username);	
 			return token;
+
 		} else {
-			return "";
+			return token;
 		}
 	}
 
-	private String getJWTToken(String username) {
+	private Token getJWTToken(String username) {
 		String secretKey = "mySecretKey";
+		Token tokenObject = new Token();
 		List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");
-
+		Date exdata = new Date(System.currentTimeMillis() + 600000);
 		String token = Jwts.builder().setId("softtekJWT").setSubject(username)
 				.claim("authorities",
 						grantedAuthorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + 600000))
+				.setExpiration(exdata)
 				.signWith(SignatureAlgorithm.HS512, secretKey.getBytes()).compact();
-
-		return "Bearer " + token;
+		tokenObject.setToken("Bearer " + token);
+		tokenObject.setDateExpiration(exdata);
+		return  tokenObject;
 	}
 }
