@@ -139,9 +139,10 @@ public class LocacaoService {
 	
 	public Iterable<Locacao> buscaLocacaoAll(){
 		
-		locacoes = new ArrayList<Locacao>();
-		
 		for(Locacao locacao : repository.findAll()) {
+			
+			locacao.setValorTotal(0);
+			
 			for(LocacaoItem item : locacao.getItens()) {
 				
 				if(locacao.getLocacaoStatus().getLocacaoStatus() == 1 && item.getDataEntrega() == null) {
@@ -158,10 +159,10 @@ public class LocacaoService {
 					
 					locacao.setValorTotal(locacao.getValorTotal() + item.getValorLocacao());
 					
-					repository.save(locacao);
-				    
 				}
 			}
+			
+			repository.save(locacao);
 			
 			
 		}
