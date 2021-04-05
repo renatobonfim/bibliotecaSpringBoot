@@ -8,7 +8,7 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
 # Membros do grupo
 
 # Diagrama de entidades
-![image](https://drive.google.com/file/d/1GbOrp5wi2-omi0qdxHyJEYA1DHaK8d1W/view?usp=sharing)
+![img](https://drive.google.com/file/d/1GbOrp5wi2-omi0qdxHyJEYA1DHaK8d1W/view?usp=sharing)
 
 # Técnologias usadas
 - [SpringBoot](https://spring.io/projects/spring-boot#)
