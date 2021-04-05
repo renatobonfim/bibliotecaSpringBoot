@@ -27,7 +27,7 @@ public class LocacaoItem {
 	private Integer id;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private Date dataPrevisaoEntrega;
 	
 	@Temporal(TemporalType.DATE)

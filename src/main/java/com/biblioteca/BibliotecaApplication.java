@@ -41,7 +41,7 @@ public class BibliotecaApplication {
             http.csrf().disable()
                 .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/user","/cadastro", "/v2/api-docs", "/swagger-resources", "/swagger-resources/**",
+                .antMatchers("/login","/cadastro", "/v2/api-docs", "/swagger-resources", "/swagger-resources/**",
             			"/configuration/ui", "/configuration/security", "/swagger-ui.html", "/webjars/**").permitAll()
                 .anyRequest().authenticated();
         }

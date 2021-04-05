@@ -1,0 +1,40 @@
+{
+        "id": 1,
+        "dataPrevisaoEntrega": null,
+        "dataEntrega": null,
+        "diarias": 2,
+        "valorDiaria": 2.5,
+        "valorLocacao": 5,
+        "locacao": {
+            "id": 1,
+            "dataAgendamento": null,
+            "dataFinalizacao": null,
+            "valorTotal": 50,
+            "locacaoStatus": "EFETIVADA",
+            "cadastro": {
+                "id": 2,
+                "nome": "renato",
+                "cpf": "46411686874",
+                "email": "renato.bpereira0@gmail.com",
+                "telefone": "11949966538",
+                "login": "renato",
+                "senha": "renato123456",
+                "endereco": {
+                    "cep": "09280-195",
+                    "logradouro": "Rua Campo Santo",
+                    "bairro": "Parque das Nações",
+                    "localidade": "Santo André",
+                    "uf": "SP",
+                    "ibge": 3547809
+                }
+            }
+        },
+        "livro": {
+            "id": 1,
+            "isbn": "54645",
+            "titulo": "Alto da barca do inferno",
+            "valorDiaria": 2.5,
+            "exemplares": 5,
+            "reservados": 2
+        }
+    }
