@@ -1,4 +1,4 @@
-# Accenture Java Project
+# Projeto Biblioteca Accenture
 Esse projeto tem como objetivo a criação de um sistema de locação de livros em uma biblioteca com gerenciamento por API's
 
 # Membros do grupo
