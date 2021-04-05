@@ -1,8 +1,8 @@
-package com.biblioteca.locacaospringjpa.service;
+package com.biblioteca.service;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.biblioteca.locacaospringjpa.model.Endereco;
+import com.biblioteca.model.Endereco;
 
 public class EnderecoService {
 	
@@ -13,8 +13,11 @@ public class EnderecoService {
 		RestTemplate restTemplate = new RestTemplate();
 		
 		String url = "https://viacep.com.br/ws/" + cep + "/json/";
-		
+				
 		endereco = restTemplate.getForObject(url, Endereco.class);
+		
+		if(endereco.getCep() == null)
+			throw new RuntimeException("CEP Não Encontrado!");
 		
 		return endereco;
 		

@@ -1,4 +1,4 @@
-package com.biblioteca.locacaospringjpa.model;
+package com.biblioteca.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

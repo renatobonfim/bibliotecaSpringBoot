@@ -1,4 +1,4 @@
-package com.biblioteca.locacaospringjpa.model;
+package com.biblioteca.model;
 
 import java.util.Date;
 
@@ -8,12 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @EnableAutoConfiguration
@@ -35,17 +37,15 @@ public class LocacaoItem {
 	@Column(nullable=false)
 	private Integer diarias;
 	
-	@Column(nullable=false)
-	private Double valorDiaria;
-	
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private Double valorLocacao;
 	
-	@ManyToOne
+	@OneToOne
+	@JsonBackReference
 	@JoinColumn(name = "id_Locacao")
 	private Locacao locacao;
 	
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "id_livro")
 	private Livro livro;
 
@@ -79,14 +79,6 @@ public class LocacaoItem {
 
 	public void setDiarias(Integer diarias) {
 		this.diarias = diarias;
-	}
-
-	public Double getValorDiaria() {
-		return valorDiaria;
-	}
-
-	public void setValorDiaria(Double valorDiaria) {
-		this.valorDiaria = valorDiaria;
 	}
 
 	public Double getValorLocacao() {

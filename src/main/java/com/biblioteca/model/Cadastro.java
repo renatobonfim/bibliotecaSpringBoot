@@ -1,4 +1,4 @@
-package com.biblioteca.locacaospringjpa.model;
+package com.biblioteca.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -24,16 +24,16 @@ public class Cadastro {
 	@Column(length=14, nullable=false)
 	private String cpf;
 	
-	@Column(length=255)
+	@Column(length=255, nullable=false)
 	private String email;
 	
-	@Column(length=12)
+	@Column(length=12, nullable=false)
 	private String telefone;
 	
-	@Column(length=50)
+	@Column(length=20, nullable=false)
 	private String login;
 	
-	@Column(length=15)
+	@Column(length=255, nullable=false)
 	private String senha;
 	
 	@Embedded
@@ -108,6 +108,8 @@ public class Cadastro {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		return result;
 	}
 
@@ -120,13 +122,13 @@ public class Cadastro {
 		if (getClass() != obj.getClass())
 			return false;
 		Cadastro other = (Cadastro) obj;
-		if (cpf == null) {
-			if (other.cpf != null)
+		if (!cpf.equals(other.cpf))
+			if (!login.equals(other.login))
 				return false;
-		} else if (!cpf.equals(other.cpf))
-			return false;
 		return true;
 	}
+
+	
 	
 	
 	

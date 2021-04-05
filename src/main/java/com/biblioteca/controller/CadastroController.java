@@ -1,4 +1,4 @@
-package com.biblioteca.locacaospringjpa.controller;
+package com.biblioteca.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioteca.locacaospringjpa.model.Cadastro;
-import com.biblioteca.locacaospringjpa.repository.CadastroRepository;
-import com.biblioteca.locacaospringjpa.service.CadastroService;
+import com.biblioteca.model.Cadastro;
+import com.biblioteca.repository.CadastroRepository;
+import com.biblioteca.service.CadastroService;
 
 @RestController
 @RequestMapping (path = "/cadastro")
@@ -25,9 +25,10 @@ public class CadastroController {
 	
 	
 	@Autowired
-	public void CadastroResource(CadastroService service) {
+	public CadastroController(CadastroService service) {
 		this.service = service;
 	}
+	
 	
 	@PostMapping
 	public void post(@RequestBody Cadastro cadastro) {
@@ -35,20 +36,14 @@ public class CadastroController {
 	}
 	
 	
-	@GetMapping
+	@GetMapping(path = "/buscar")
 	public Iterable<Cadastro> get() {
 		return repository.findAll();
 	}
 	
-	@GetMapping(path = "/find/{id}")
+	@GetMapping(path = "/buscar/{id}")
 	public Cadastro get(@PathVariable("id") Integer id) {
 		return repository.findById(id).orElse(null);
 	}
-	
-	@DeleteMapping(path = "/delete/{id}")
-	public void delete(@PathVariable("id") Integer id) {
-		repository.deleteById(id);
-	}
-	
 	
 }

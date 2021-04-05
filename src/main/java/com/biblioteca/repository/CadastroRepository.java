@@ -1,11 +1,11 @@
-package com.biblioteca.locacaospringjpa.repository;
+package com.biblioteca.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.biblioteca.locacaospringjpa.model.Cadastro;
+import com.biblioteca.model.Cadastro;
 
 public interface CadastroRepository extends CrudRepository<Cadastro, Integer> {
 	
-	 Cadastro findByNome(String nome);
+	 Cadastro findByLogin(String login);
 	 
 }

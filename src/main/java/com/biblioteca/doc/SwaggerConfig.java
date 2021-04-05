@@ -1,4 +1,4 @@
-package com.biblioteca.locacaospringjpa.doc;
+package com.biblioteca.doc;
 
 //teste
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class SwaggerConfig {
 		docket
 		.globalOperationParameters(params)
 		.select()
-		.apis(RequestHandlerSelectors.basePackage("com.biblioteca.locacaospringjpa.controller"))
+		.apis(RequestHandlerSelectors.basePackage("com.biblioteca.controller"))
 		.paths(PathSelectors.any())
 		.build()
 		.apiInfo(this.informacoesApi().build())
@@ -57,22 +57,11 @@ public class SwaggerConfig {
 		ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder();
  
 		apiInfoBuilder.title("Biblioteca - Springboot JPA - REST API");
-		apiInfoBuilder.description("API - Desafio Gama Academy");
-		apiInfoBuilder.version("0.1");
-		//apiInfoBuilder.termsOfServiceUrl("Termo de uso: Digytal");
-		//apiInfoBuilder.license("Licença - Digytal");
-		//apiInfoBuilder.licenseUrl("http://www.digytal.com.br");
-		//apiInfoBuilder.contact(this.contato());
+		apiInfoBuilder.description("API - Desafio Gama Academy " + "\n" + "Desenvolvido por: Renato Bonfim (renato.bpereira0@gmail.com.br) e Rodrigo Azevedo Martins (https://www.linkedin.com/in/rodrigoazevedomartins/)");
+		apiInfoBuilder.version("1.0");
  
 		return apiInfoBuilder;
  
-	}
-	private Contact contato() {
- 
-		return new Contact(
-				"Renato Bonfim",
-				"http://www.google.com", 
-				"renato.bpereira0@gmail.com.br");
 	}
 
 }

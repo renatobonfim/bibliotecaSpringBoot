@@ -1,10 +1,10 @@
-package com.biblioteca.locacaospringjpa.model;
+package com.biblioteca.model;
 
 public enum LocacaoStatus {
 	
-	RESERVADA(1),
-	EFETIVADA(2),
-	FINALIZADA(3);
+	RESERVADA(0),
+	EFETIVADA(1),
+	FINALIZADA(2);
 	 
 	
 	private int status;
@@ -13,7 +13,7 @@ public enum LocacaoStatus {
 		this.status = status;
 	}
 	
-	private int getLocacaoStatus() {
+	public int getLocacaoStatus() {
 		return this.status;
 	}
 }

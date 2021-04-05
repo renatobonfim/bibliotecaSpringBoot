@@ -1,4 +1,4 @@
-package com.biblioteca.locacaospringjpa.controller;
+package com.biblioteca.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioteca.locacaospringjpa.model.Livro;
-import com.biblioteca.locacaospringjpa.repository.LivroRepository;
-import com.biblioteca.locacaospringjpa.service.LivroService;
+import com.biblioteca.model.Livro;
+import com.biblioteca.repository.LivroRepository;
+import com.biblioteca.service.LivroService;
 
 @RestController
 @RequestMapping (path = "/livro")
@@ -32,19 +32,14 @@ public class LivroController {
 		service.salvar(livro);
 	}
 	
-	@GetMapping
+	@GetMapping(path = "/buscar")
 	public Iterable<Livro> get() {
 		return repository.findAll();
 	}
 	
-	@GetMapping(path = "/find/{id}")
+	@GetMapping(path = "/buscar/{id}")
 	public Livro get(@PathVariable("id") Integer id) {
 		return repository.findById(id).orElse(null);
-	}
-	
-	@DeleteMapping(path = "/delete/{id}")
-	public void delete(@PathVariable("id") Integer id) {
-		repository.deleteById(id);
 	}
 	
 }

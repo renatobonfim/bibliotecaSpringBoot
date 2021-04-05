@@ -1,4 +1,4 @@
-package com.biblioteca.locacaospringjpa.model;
+package com.biblioteca.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -86,6 +86,7 @@ public class Livro {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
+		result = prime * result + ((titulo == null) ? 0 : titulo.hashCode());
 		return result;
 	}
 
@@ -98,16 +99,10 @@ public class Livro {
 		if (getClass() != obj.getClass())
 			return false;
 		Livro other = (Livro) obj;
-		if (isbn == null) {
-			if (other.isbn != null)
+		if (!isbn.equals(other.isbn))
+			if (!titulo.equals(other.titulo))
 				return false;
-		} else if (!isbn.equals(other.isbn))
-			return false;
 		return true;
 	}
-	
-	
-	
-	
 
 }
