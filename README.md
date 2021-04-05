@@ -87,7 +87,7 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
   "nome": "string",
   "senha": "string",
   "telefone": "string"
-}]
+  }]
   ```
 
    Endpoint(Responsavel por recuperar um unico cadastro): /cadastro/buscar/{id} GET
