@@ -43,14 +43,8 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
     "cpf": "string",
     "email": "string",
     "endereco": {
-      "bairro": "string",
-      "cep": "string",
-      "ibge": 0,
-      "localidade": "string",
-      "logradouro": "string",
-      "uf": "string"
+      "cep": "string"
     },
-    "id": 0,
     "login": "string",
     "nome": "string",
     "senha": "string",
@@ -128,7 +122,6 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
   Body
   {
   "exemplares": 0,
-  "id": 0,
   "isbn": "string",
   "reservados": 0,
   "titulo": "string",
@@ -140,7 +133,7 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
   
   ```
 
-  Endpoint(Responsavel por recuperar todos os livors cadastrados): /livro/buscar GET
+  Endpoint(Responsavel por recuperar todos os livros cadastrados): /livro/buscar GET
   
    ```sh
    
@@ -190,45 +183,25 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
   Body
   {
   "cadastro": {
-    "cpf": "string",
-    "email": "string",
-    "endereco": {
-      "bairro": "string",
-      "cep": "string",
-      "ibge": 0,
-      "localidade": "string",
-      "logradouro": "string",
-      "uf": "string"
-    },
-    "id": 0,
-    "login": "string",
-    "nome": "string",
-    "senha": "string",
-    "telefone": "string"
+    "id": 0
   },
-  "dataAgendamento": "2021-04-05T16:14:28.787Z",
-  "dataFinalizacao": "2021-04-05T16:14:28.787Z",
-  "dataRetirada": "2021-04-05T16:14:28.787Z",
-  "id": 0,
   "itens": [
     {
-      "dataEntrega": "2021-04-05T16:14:28.787Z",
-      "dataPrevisaoEntrega": "2021-04-05T16:14:28.787Z",
+      "dataPrevisaoEntrega": "2021-04-05T01:14:06.637Z",
       "diarias": 0,
-      "id": 0,
       "livro": {
-        "exemplares": 0,
-        "id": 0,
-        "isbn": "string",
-        "reservados": 0,
-        "titulo": "string",
-        "valorDiaria": 0
-      },
-      "valorLocacao": 0
-    }
+        "id": 0
+      }
+    },
+		{
+      "dataPrevisaoEntrega": "2021-04-05T01:14:06.637Z",
+      "diarias": 0,
+      "livro": {
+        "id": 0
+      }
+		}
   ],
-  "locacaoStatus": "RESERVADA",
-  "valorTotal": 0
+  "locacaoStatus": "RESERVADA"
 }
 
   Retorno 
