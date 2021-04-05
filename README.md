@@ -99,23 +99,23 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
     
     Retorno
     {
-  "cpf": "string",
-  "email": "string",
-  "endereco": {
-    "bairro": "string",
-    "cep": "string",
-    "ibge": 0,
-    "localidade": "string",
-    "logradouro": "string",
-    "uf": "string"
-  },
-  "id": 0,
-  "login": "string",
-  "nome": "string",
-  "senha": "string",
-  "telefone": "string"
-}
-  ```
+    "cpf": "string",
+    "email": "string",
+    "endereco": {
+      "bairro": "string",
+      "cep": "string",
+      "ibge": 0,
+     "localidade": "string",
+     "logradouro": "string",
+     "uf": "string"
+   },
+   "id": 0,
+   "login": "string",
+   "nome": "string",
+   "senha": "string",
+   "telefone": "string"
+  }
+   ```
 
  - Livro Controller
 
