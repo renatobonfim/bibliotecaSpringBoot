@@ -5,14 +5,13 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
 - Renato Bonfim Pereira https://www.linkedin.com/in/renato-bonfim-pereira-9337a0133/
 - Rodrigo Azevedo Martins https://www.linkedin.com/in/rodrigoazevedomartins/
 
-# Membros do grupo
-
 # Diagrama de entidades
-![img](https://drive.google.com/file/d/1GbOrp5wi2-omi0qdxHyJEYA1DHaK8d1W/view?usp=sharing)
+![Diagrama de Entidades](https://user-images.githubusercontent.com/47754731/113617395-a5d72580-962c-11eb-90e8-8ba1c1179844.jpg)
+
 
 # Técnologias usadas
 - [SpringBoot](https://spring.io/projects/spring-boot#)
-- [Spring Data](https://spring.io/projects/spring-data-jpa#)
+- [Spring Data JPA](https://spring.io/projects/spring-data-jpa#)
 - [Swagger](https://swagger.io/#)
 - [Securing a Web Application](https://spring.io/guides/gs/securing-web/#)
 - [JSON Web Tokens](https://jwt.io/#)
