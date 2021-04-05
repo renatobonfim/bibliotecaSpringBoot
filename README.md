@@ -20,17 +20,20 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
 
   Endpoint: /login POST
   
-![image](https://user-images.githubusercontent.com/81447934/113606022-d2377580-961d-11eb-92f0-4b3ef63da75e.png)
-
+ ```sh
+   
+  Parametros 
+        Name: user      Value: user 
+        Name: password  Value: password 
+```
 - Cadastro Controller
 
   Endpoint(Responsavel pelo cadastro de novos usuarios): /cadastro POST
    
   ```sh
-  
-  Header 
-        Name: Authorization  Value: Retorno da User Controller
 
+
+  Body
   {
     "cpf": "string",
     "email": "string",
@@ -77,6 +80,7 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
   Header 
         Name: Authorization  Value: Retorno da User Controller
 
+  Body
   {
   "exemplares": 0,
   "id": 0,
@@ -111,7 +115,11 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
    Endpoint(Responsavel por cadastrar uma locação): /locacao/agendar POST
   
    ```sh
+   
+  Header 
+        Name: Authorization  Value: Retorno da User Controller
 
+  Body
   {
   "cadastro": {
     "cpf": "string",
