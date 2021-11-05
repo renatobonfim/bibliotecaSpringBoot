@@ -3,7 +3,6 @@ Esse projeto tem como objetivo a criação de um sistema de locação de livros 
 
 # Membros do grupo
 - Renato Bonfim Pereira https://www.linkedin.com/in/renato-bonfim-pereira-9337a0133/
-- Rodrigo Azevedo Martins https://www.linkedin.com/in/rodrigoazevedomartins/
 
 # Diagrama de entidades
 ![Diagrama de Entidades](https://user-images.githubusercontent.com/47754731/113617395-a5d72580-962c-11eb-90e8-8ba1c1179844.jpg)
